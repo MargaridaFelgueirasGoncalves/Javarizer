@@ -32,7 +32,7 @@ public class Server {
         playersList = Collections.synchronizedList(new LinkedList<>());
 
         connections = 0;
-        maxConnections = 0;
+        maxConnections = 1;
 
         try {
             serverSocket = new ServerSocket(port);
@@ -99,7 +99,7 @@ public class Server {
     }
 
     // setter
-        public void setMaxConnections(int maxConnections) {
+    public void setMaxConnections(int maxConnections) {
         this.maxConnections = maxConnections;
     }
 }
