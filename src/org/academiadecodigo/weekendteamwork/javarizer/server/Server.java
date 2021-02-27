@@ -21,16 +21,18 @@ public class Server {
     private final ExecutorService service;
     private final List<Player> playersList;
     private int connections;
+    private int maxConnections;
 
     /**
      * constructor
      */
     public Server(int port) {
 
-        service = Executors.newFixedThreadPool(5);
+        service = Executors.newCachedThreadPool();
         playersList = Collections.synchronizedList(new LinkedList<>());
 
         connections = 0;
+        maxConnections = 0;
 
         try {
             serverSocket = new ServerSocket(port);
@@ -54,13 +56,14 @@ public class Server {
      */
     private void waitConnection() {
 
-        while (connections < 5) {
+        while (connections < maxConnections) {
 
             try {
                 System.out.println("Waiting for connection...");
                 Socket playerSocket = serverSocket.accept();
-                connections++;
                 System.out.println("New client connection" + playerSocket);
+
+                connections++;
 
                 ConnectionHandler connectionHandler = new ConnectionHandler(playerSocket, this);
 
@@ -90,4 +93,13 @@ public class Server {
 
     }
 
+    // getter
+    public int getConnections() {
+        return connections;
+    }
+
+    // setter
+        public void setMaxConnections(int maxConnections) {
+        this.maxConnections = maxConnections;
+    }
 }

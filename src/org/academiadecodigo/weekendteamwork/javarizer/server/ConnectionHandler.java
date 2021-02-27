@@ -1,6 +1,7 @@
 package org.academiadecodigo.weekendteamwork.javarizer.server;
 
 import org.academiadecodigo.bootcamp.Prompt;
+import org.academiadecodigo.bootcamp.scanners.integer.IntegerInputScanner;
 import org.academiadecodigo.bootcamp.scanners.menu.MenuInputScanner;
 import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
 import java.io.*;
@@ -39,9 +40,21 @@ public class ConnectionHandler implements Runnable {
     public void run() {
 
         prompt = new Prompt(in, out);
-//        display();
-//        askUsername();
+        display();
+        limitPlayers();
+        askUsername();
         menu();
+    }
+
+    public synchronized void limitPlayers() {
+
+        if (server.getConnections() == 1) {
+
+            IntegerInputScanner scanner = new IntegerInputScanner();
+            scanner.setMessage("How many players: ");
+
+            server.setMaxConnections(prompt.getUserInput(scanner));
+        }
     }
 
     public void askUsername() {
