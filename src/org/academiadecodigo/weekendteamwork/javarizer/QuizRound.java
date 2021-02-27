@@ -14,13 +14,14 @@ public class QuizRound implements Runnable{
     private FileReader fileReader;
     private BufferedReader bReader;
     private List<String> list;
-    private Prompt prompt;
-    //private Server server;
+    private Player player;
+    private Server server;
 
 
-    public QuizRound(Prompt prompt, Server server) {
-        this.prompt = prompt;
+    public QuizRound(Player player, Server server) {
+        this.player = player;
         list = new LinkedList<>();
+        this.server = server;
         initIO();
     }
 
@@ -48,6 +49,7 @@ public class QuizRound implements Runnable{
 
             int counter = 0;
 
+
             while (counter < list.size()) {
 
                 String question = list.get(counter++);
@@ -63,16 +65,26 @@ public class QuizRound implements Runnable{
                 MenuInputScanner menuInputScanner = new MenuInputScanner(menu);
                 menuInputScanner.setMessage(question);
 
-                int playersAnswer = prompt.getUserInput(menuInputScanner);
-                System.out.println(Thread.currentThread().getName()+ playersAnswer);
+                int playersAnswer = player.getPrompt().getUserInput(menuInputScanner);
 
                 //wait();
 
                 // if answer is correctAnswer, increase score
 
-                // if (playersAnswer == correctAnswer) { }
-
+                if (playersAnswer == correctAnswer) {
+                    player.incrementScore();
+                    System.out.println("score " + player.getScore());
+                }
+                player.getOut().println("correct answer is: " + correctAnswer);
             }
+
+            /**
+             * show results
+             * falta fazer
+             */
+
+            player.getOut().close();
+
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -100,8 +100,8 @@ public class Player implements Runnable {
         return prompt;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void incrementScore() {
+        this.score++;
     }
 
     public void setUsername(String username) {
@@ -110,5 +110,9 @@ public class Player implements Runnable {
 
     public String getUsername() {
         return username;
+    }
+
+    public int getScore() {
+        return score;
     }
 }

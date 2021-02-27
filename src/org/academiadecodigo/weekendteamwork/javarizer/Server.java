@@ -31,7 +31,7 @@ public class Server {
         playersList = Collections.synchronizedList(new LinkedList<>());
 
         connections = 0;
-        maxConnections = 5;
+        maxConnections = 2;
 
         try {
             serverSocket = new ServerSocket(port);
@@ -66,8 +66,6 @@ public class Server {
 
                 Player player = new Player(playerSocket, this);
 
-
-
                 // add player to the list
                 playersList.add(player);
 
@@ -77,6 +75,7 @@ public class Server {
                 service.submit(player);
 
                 connections++;
+                System.out.println(connections);
 
             } catch (IOException e) {
                 System.err.println("Error establishing connection: " + e.getMessage());
@@ -84,10 +83,12 @@ public class Server {
             }
         }
 
+        System.out.println("aqui");
         checkPlayers(playersList);
 
+
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -99,7 +100,7 @@ public class Server {
     public void startQuiz(QuizRound round) {
 
         for (Player player : playersList) {
-            round = new QuizRound(player.getPrompt(), this);
+            round = new QuizRound(player, this);
 
             service.submit(round);
 
@@ -139,4 +140,7 @@ public class Server {
         this.maxConnections = maxConnections;
     }
 
+    public List<Player> getPlayersList() {
+        return playersList;
+    }
 }
