@@ -4,6 +4,8 @@ import org.academiadecodigo.bootcamp.Prompt;
 import org.academiadecodigo.bootcamp.scanners.integer.IntegerInputScanner;
 import org.academiadecodigo.bootcamp.scanners.menu.MenuInputScanner;
 import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
+import org.academiadecodigo.weekendteamwork.javarizer.player.Player;
+
 import java.io.*;
 import java.net.Socket;
 import java.util.LinkedList;
@@ -15,7 +17,7 @@ public class ConnectionHandler implements Runnable {
      * fields
      */
     private Socket playerSocket;
-    private Server server;
+    private final Server server;
     private Prompt prompt;
     private DataInputStream in;
     private PrintStream out;
@@ -33,6 +35,7 @@ public class ConnectionHandler implements Runnable {
 
         } catch (IOException e) {
             e.printStackTrace();
+
         }
     }
 
@@ -40,10 +43,7 @@ public class ConnectionHandler implements Runnable {
     public void run() {
 
         prompt = new Prompt(in, out);
-        display();
-        limitPlayers();
-        askUsername();
-        menu();
+
     }
 
     public synchronized void limitPlayers() {
@@ -54,10 +54,15 @@ public class ConnectionHandler implements Runnable {
             scanner.setMessage("How many players: ");
 
             server.setMaxConnections(prompt.getUserInput(scanner));
+
         }
     }
 
-    public void askUsername() {
+    public String askUsername() {
+
+        display();
+
+        prompt = new Prompt(in, out);
 
         StringInputScanner scanner = new StringInputScanner();
         scanner.setMessage("Enter your username: ");
@@ -66,6 +71,11 @@ public class ConnectionHandler implements Runnable {
 
         // this will print to the server
         System.out.println("Username: " + username);
+
+        out.println("Waiting for other players to connect...");
+
+        return username;
+
     }
 
     public void display() {
@@ -77,16 +87,17 @@ public class ConnectionHandler implements Runnable {
                 "    |  |/ __ \\\\   /  / __ \\|  | \\/  |/    /\\  ___/|  | \\/\n" +
                 "/\\__|  (____  /\\_/  (____  /__|  |__/_____ \\\\___  >__|   \n" +
                 "\\______|    \\/           \\/               \\/    \\/       \n";
-        System.out.println(javarizer);
-    }
 
-    public void menu() {
 
-        // display each question in a menu
-        new QuizRound(prompt);
+        out.println(javarizer);
+
     }
 
     public PrintStream getOut() {
         return out;
+    }
+
+    public Prompt getPrompt() {
+        return prompt;
     }
 }

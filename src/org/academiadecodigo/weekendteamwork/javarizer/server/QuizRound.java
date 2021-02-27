@@ -2,11 +2,14 @@ package org.academiadecodigo.weekendteamwork.javarizer.server;
 
 import org.academiadecodigo.bootcamp.Prompt;
 import org.academiadecodigo.bootcamp.scanners.menu.MenuInputScanner;
+import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
+import org.academiadecodigo.weekendteamwork.javarizer.player.Player;
+
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 
-public class QuizRound {
+public class QuizRound implements Runnable{
 
     private final String path = "resources/quiz.txt";
 
@@ -14,14 +17,13 @@ public class QuizRound {
     private BufferedReader bReader;
     private List<String> list;
     private Prompt prompt;
+    //private Server server;
 
 
-    public QuizRound(Prompt prompt) {
-
+    public QuizRound(Prompt prompt, Server server) {
         this.prompt = prompt;
         list = new LinkedList<>();
         initIO();
-        round();
     }
 
     public void initIO() {
@@ -34,6 +36,7 @@ public class QuizRound {
             e.printStackTrace();
         }
     }
+
 
     public void round() {
 
@@ -64,11 +67,18 @@ public class QuizRound {
 
                 int playersAnswer = prompt.getUserInput(menuInputScanner);
 
+                //wait();
+
                 // if answer is correctAnswer, increase score
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void run() {
+        round();
     }
 }

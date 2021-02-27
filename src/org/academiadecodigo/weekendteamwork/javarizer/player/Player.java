@@ -18,7 +18,6 @@ public class Player {
         this.connectionHandler = connectionHandler;
     }
 
-
     /**
      * getters and setters
      */
@@ -36,5 +35,9 @@ public class Player {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
