@@ -1,17 +1,13 @@
-package org.academiadecodigo.weekendteamwork.javarizer.server;
+package org.academiadecodigo.weekendteamwork.javarizer;
 
 import org.academiadecodigo.bootcamp.Prompt;
 import org.academiadecodigo.bootcamp.scanners.integer.IntegerInputScanner;
-import org.academiadecodigo.bootcamp.scanners.menu.MenuInputScanner;
 import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
-import org.academiadecodigo.weekendteamwork.javarizer.player.Player;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.LinkedList;
-import java.util.List;
 
-public class ConnectionHandler implements Runnable {
+public class Player implements Runnable {
 
     /**
      * fields
@@ -22,10 +18,13 @@ public class ConnectionHandler implements Runnable {
     private DataInputStream in;
     private PrintStream out;
 
+    private String username;
+    private int score;
+
     /**
      * constructor
      */
-    public ConnectionHandler(Socket playerSocket, Server server) {
+    public Player(Socket playerSocket, Server server) {
         this.playerSocket = playerSocket;
         this.server = server;
 
@@ -99,5 +98,17 @@ public class ConnectionHandler implements Runnable {
 
     public Prompt getPrompt() {
         return prompt;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUsername() {
+        return username;
     }
 }

@@ -1,4 +1,4 @@
-package org.academiadecodigo.weekendteamwork.javarizer.server;
+package org.academiadecodigo.weekendteamwork.javarizer;
 
 public class Main {
 

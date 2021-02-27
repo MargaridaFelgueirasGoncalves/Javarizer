@@ -1,4 +1,4 @@
-package org.academiadecodigo.weekendteamwork.javarizer.server;
+package org.academiadecodigo.weekendteamwork.javarizer;
 
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;

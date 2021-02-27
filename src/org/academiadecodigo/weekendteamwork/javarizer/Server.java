@@ -1,6 +1,5 @@
-package org.academiadecodigo.weekendteamwork.javarizer.server;
+package org.academiadecodigo.weekendteamwork.javarizer;
 
-import org.academiadecodigo.weekendteamwork.javarizer.player.Player;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.net.ServerSocket;
@@ -65,17 +64,17 @@ public class Server {
                 System.out.println("New client connection" + playerSocket);
 
 
-                ConnectionHandler connectionHandler = new ConnectionHandler(playerSocket, this);
+                Player player = new Player(playerSocket, this);
 
-                Player player = new Player(connectionHandler);
+
 
                 // add player to the list
                 playersList.add(player);
 
-                player.setUsername(connectionHandler.askUsername());
+                player.setUsername(player.askUsername());
 
                 // start thread pool
-                service.submit(connectionHandler);
+                service.submit(player);
 
                 connections++;
 
@@ -100,11 +99,11 @@ public class Server {
     public void startQuiz(QuizRound round) {
 
         for (Player player : playersList) {
-            round = new QuizRound(player.getConnectionHandler().getPrompt(), this);
+            round = new QuizRound(player.getPrompt(), this);
 
             service.submit(round);
 
-            PrintStream writer = new PrintStream(player.getConnectionHandler().getOut());
+            PrintStream writer = new PrintStream(player.getOut());
 
         }
     }
@@ -124,7 +123,7 @@ public class Server {
     public void broadcast (String string) {
 
         for (Player player : playersList) {
-            PrintStream writter = new PrintStream(player.getConnectionHandler().getOut());
+            PrintStream writter = new PrintStream(player.getOut());
             writter.println(string);
 
         }
@@ -140,7 +139,4 @@ public class Server {
         this.maxConnections = maxConnections;
     }
 
-    public List<Player> getPlayersList() {
-        return playersList;
-    }
 }

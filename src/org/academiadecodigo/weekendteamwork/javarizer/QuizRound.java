@@ -1,9 +1,7 @@
-package org.academiadecodigo.weekendteamwork.javarizer.server;
+package org.academiadecodigo.weekendteamwork.javarizer;
 
 import org.academiadecodigo.bootcamp.Prompt;
 import org.academiadecodigo.bootcamp.scanners.menu.MenuInputScanner;
-import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
-import org.academiadecodigo.weekendteamwork.javarizer.player.Player;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -71,6 +69,9 @@ public class QuizRound implements Runnable{
                 //wait();
 
                 // if answer is correctAnswer, increase score
+
+                // if (playersAnswer == correctAnswer) { }
+
             }
 
         } catch (IOException e) {
