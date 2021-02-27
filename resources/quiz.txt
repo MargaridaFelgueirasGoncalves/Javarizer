@@ -4,51 +4,73 @@ print ("Hello World");
 Console.WriteLine("Hello World");
 echo("Hello World");
 1
-How do you create a variable with the numeric value 5?
-float x = 5;
-x = 5;
-int x = 5;
-num x = 5
-3
-Which data type is used to create a variable that should store text?
-string
-String
-myString
-Txt
+
+Which of those allows duplicate elements?
+Set
+List
+All
+None of the above
 2
-How do you create a variable with the floating number 2.8?
-int x = 2.8f;
-byte x = 2.8f;
-float x = 2.8f;
-x = 2.8f;
+
+What is a constructor?
+Another name for an instance variable
+The return type of a method
+The method that creates an object, or instance, of the class
+The instantiation of an object
 3
-How do you insert comments in Java?
-// This is a comment
-# This is a comment
-/* This is a comment
-$ This is a comment
+
+What guarantees type-safety in a collection?
+Generics
+Abstract classes
+Interfaces
+Collection
 1
-Which method can be used to return a string in upper case letters?
-tuc()
-upperCase()
-touppercase()
-toUpperCase()
+
+What is the average air speed velocity of a laden swallow?
+While carrying a coconut?
+What do you mean, an African or European Swallow?
+Swallows don't fly.
+You have to take the difference between ground speed and the wind speed.
+2
+
+Which of these is synchronized?
+ArrayList
+LinkedList
+Vector
+None of those
+3
+
+LinkedList implements?
+Deque
+List
+None of the above
+Both of the above
 4
-Which operator can be used to compare two values?
-><
-=
-==
-<>
-3
-How do you create a method in Java?
-(methodName)
-methodName.
-methodName()
-methodName[]
-3
-What is the correct way to create an object called myObj of MyClass?
-MyClass myObj = new MyClass();
-class MyClass = new myObj();
-class myObj = new MyClass();
-new myObj = MyClass();
+
+How many bones are there in the human body?
+206
+205
+201
+209
 1
+
+In iterator, nextElement() method of Enumeration has been changed to:
+next()
+getNext()
+returnNext()
+name remains same
+1
+
+What are the four pillars of object-oriented programming?
+Encapsulation, Specialization, Division of Responsibility, Data Hiding
+Abstraction, Encapsulation, Inheritance, Polymorphism
+Composition, Inheritance, Polymorphism, Encapsulation
+Abstraction, Composition, Inheritance, Encapsulation, Polymorphism
+2
+
+How many threads can be executed at a time?
+Only one thread
+Multiple threads
+Only main (main() method) thread
+Two threads
+2

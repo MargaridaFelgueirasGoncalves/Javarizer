@@ -10,6 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        new ServerPic();
         Server server = new Server(PORT);
         server.start();
     }
