@@ -2,6 +2,7 @@ package org.academiadecodigo.weekendteamwork.javarizer.server;
 
 import org.academiadecodigo.weekendteamwork.javarizer.player.Player;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Collections;
@@ -74,5 +75,14 @@ public class Server {
             }
         }
     }
+
+//    public void broadcast() {
+//
+//        for (Player player : playersList) {
+//
+//            PrintWriter printWriter = new PrintWriter()
+//            player.getConnectionHandler()
+//        }
+//    }
 
 }

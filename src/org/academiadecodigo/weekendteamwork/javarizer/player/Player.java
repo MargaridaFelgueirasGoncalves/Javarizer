@@ -30,6 +30,10 @@ public class Player {
         return score;
     }
 
+    public ConnectionHandler getConnectionHandler() {
+        return connectionHandler;
+    }
+
     public void setScore(int score) {
         this.score = score;
     }
