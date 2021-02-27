@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a83c593-7153-4086-a43f-b8ad8accdd73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javarizer/org/academiadecodigo/weekendteamwork/javarizer/player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javarizer/org/academiadecodigo/weekendteamwork/javarizer/player/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javarizer/org/academiadecodigo/weekendteamwork/javarizer/server/ConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javarizer/org/academiadecodigo/weekendteamwork/javarizer/server/ConnectionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javarizer/org/academiadecodigo/weekendteamwork/javarizer/server/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javarizer/org/academiadecodigo/weekendteamwork/javarizer/server/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javarizer/org/academiadecodigo/weekendteamwork/javarizer/server/QuizRound.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javarizer/org/academiadecodigo/weekendteamwork/javarizer/server/QuizRound.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javarizer/org/academiadecodigo/weekendteamwork/javarizer/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javarizer/org/academiadecodigo/weekendteamwork/javarizer/server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/server/ConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/server/ConnectionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javarizer/org/academiadecodigo/weekendteamwork/javarizer/server/ServerPic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javarizer/org/academiadecodigo/weekendteamwork/javarizer/server/ServerPic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/quiz.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/quiz.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/server/QuizRound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/server/QuizRound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/server/Server.java" afterDir="false" />
     </list>
@@ -36,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../producer-consumer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -71,39 +71,5 @@
       <updated>1614440264032</updated>
     </task>
     <servers />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="768" y="321" width="374" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1614447296830">
-      <screen x="0" y="27" width="1920" height="1173" />
-    </state>
-    <state x="768" y="321" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/0.1200.1920.1080/0.27.1920.1173@0.27.1920.1173" timestamp="1614447296830" />
-    <state x="743" y="371" width="424" height="491" key="FileChooserDialogImpl" timestamp="1614450413304">
-      <screen x="0" y="27" width="1920" height="1173" />
-    </state>
-    <state x="743" y="371" width="424" height="491" key="FileChooserDialogImpl/0.1200.1920.1080/0.27.1920.1173@0.27.1920.1173" timestamp="1614450413304" />
-    <state width="1874" height="374" key="GridCell.Tab.0.bottom" timestamp="1614454454504">
-      <screen x="0" y="27" width="1920" height="1173" />
-    </state>
-    <state width="1874" height="406" key="GridCell.Tab.0.bottom/0.1200.1920.1080/0.0.1920.1200@0.1200.1920.1080" timestamp="1614443764017" />
-    <state width="1874" height="374" key="GridCell.Tab.0.bottom/0.1200.1920.1080/0.27.1920.1173@0.27.1920.1173" timestamp="1614454454504" />
-    <state width="1874" height="374" key="GridCell.Tab.0.center" timestamp="1614454454504">
-      <screen x="0" y="27" width="1920" height="1173" />
-    </state>
-    <state width="1874" height="406" key="GridCell.Tab.0.center/0.1200.1920.1080/0.0.1920.1200@0.1200.1920.1080" timestamp="1614443764017" />
-    <state width="1874" height="374" key="GridCell.Tab.0.center/0.1200.1920.1080/0.27.1920.1173@0.27.1920.1173" timestamp="1614454454504" />
-    <state width="1874" height="374" key="GridCell.Tab.0.left" timestamp="1614454454504">
-      <screen x="0" y="27" width="1920" height="1173" />
-    </state>
-    <state width="1874" height="406" key="GridCell.Tab.0.left/0.1200.1920.1080/0.0.1920.1200@0.1200.1920.1080" timestamp="1614443764017" />
-    <state width="1874" height="374" key="GridCell.Tab.0.left/0.1200.1920.1080/0.27.1920.1173@0.27.1920.1173" timestamp="1614454454504" />
-    <state width="1874" height="374" key="GridCell.Tab.0.right" timestamp="1614454454504">
-      <screen x="0" y="27" width="1920" height="1173" />
-    </state>
-    <state width="1874" height="406" key="GridCell.Tab.0.right/0.1200.1920.1080/0.0.1920.1200@0.1200.1920.1080" timestamp="1614443764017" />
-    <state width="1874" height="374" key="GridCell.Tab.0.right/0.1200.1920.1080/0.27.1920.1173@0.27.1920.1173" timestamp="1614454454504" />
-    <state x="623" y="289" width="672" height="678" key="search.everywhere.popup" timestamp="1614453578488">
-      <screen x="0" y="27" width="1920" height="1173" />
-    </state>
-    <state x="623" y="289" width="672" height="678" key="search.everywhere.popup/0.1200.1920.1080/0.27.1920.1173@0.27.1920.1173" timestamp="1614453578488" />
   </component>
 </project>

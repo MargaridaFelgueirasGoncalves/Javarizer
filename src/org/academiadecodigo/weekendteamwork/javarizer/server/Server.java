@@ -140,4 +140,7 @@ public class Server {
         this.maxConnections = maxConnections;
     }
 
+    public List<Player> getPlayersList() {
+        return playersList;
+    }
 }

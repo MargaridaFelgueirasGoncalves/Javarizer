@@ -66,6 +66,7 @@ public class QuizRound implements Runnable{
                 menuInputScanner.setMessage(question);
 
                 int playersAnswer = prompt.getUserInput(menuInputScanner);
+                System.out.println(Thread.currentThread().getName()+ playersAnswer);
 
                 //wait();
 
