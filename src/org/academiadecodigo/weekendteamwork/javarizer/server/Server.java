@@ -2,6 +2,7 @@ package org.academiadecodigo.weekendteamwork.javarizer.server;
 
 import org.academiadecodigo.weekendteamwork.javarizer.player.Player;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -70,19 +71,23 @@ public class Server {
                 // start thread pool
                 service.submit(connectionHandler);
 
+
             } catch (IOException e) {
                 System.err.println("Error establishing connection: " + e.getMessage());
             }
         }
     }
 
-//    public void broadcast() {
-//
-//        for (Player player : playersList) {
-//
-//            PrintWriter printWriter = new PrintWriter()
-//            player.getConnectionHandler()
-//        }
-//    }
+    public void broadcast() {
+
+        for (Player player : playersList) {
+
+            PrintStream writter = new PrintStream(player.getConnectionHandler().getOut());
+            writter.println("Hello World");
+
+        }
+
+
+    }
 
 }

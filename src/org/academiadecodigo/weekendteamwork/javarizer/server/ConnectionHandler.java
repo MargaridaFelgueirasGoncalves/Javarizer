@@ -73,4 +73,7 @@ public class ConnectionHandler implements Runnable {
         new QuizRound(prompt);
     }
 
+    public PrintStream getOut() {
+        return out;
+    }
 }
