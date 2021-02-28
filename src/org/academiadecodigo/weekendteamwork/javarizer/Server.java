@@ -90,8 +90,23 @@ public class Server {
         checkPlayers(playersList);
 
         try {
-            broadcast("\nGame starts in 5 seconds...");
+
+            broadcast("\n                        .-\"\"\"-.\n" +
+                    "                       / .===. \\\n" +
+                    "                       \\/ 6 6 \\/\n" +
+                    "                       ( \\___/ )\n" +
+                    "  _________________ooo__\\_____/_____________________\n" +
+                    " /                                                  \\\n" +
+                    "|               Game wil start in 5 seconds...          |\n" +
+                    " \\______________________________ooo_________________/\n" +
+                    "                       |  |  |\n" +
+                    "                       |_ | _|\n" +
+                    "                       |  |  |\n" +
+                    "                       |__|__|\n" +
+                    "                       /-'Y'-\\\n" +
+                    "                      (__/ \\__)");
             Thread.sleep(5000);
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
