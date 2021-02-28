@@ -19,7 +19,8 @@ public class Server {
     private int maxConnections;
 
     private ServerSocket serverSocket;
-    private final ExecutorService service;
+    private ExecutorService playerService;
+    private ExecutorService quizService;
     private final List<Player> playersList;
 
     private QuizRound quizRound;
@@ -29,7 +30,8 @@ public class Server {
      */
     public Server(int port) {
 
-        service = Executors.newCachedThreadPool();
+        playerService = Executors.newCachedThreadPool();
+        quizService = Executors.newCachedThreadPool();
         playersList = Collections.synchronizedList(new LinkedList<>());
 
         connections = 0;
@@ -79,7 +81,7 @@ public class Server {
                 if (connections < maxConnections - 1) player.getOut().println("Let's wait for the other players...");
 
                 // start thread pool
-                service.submit(player);
+                playerService.submit(player);
 
                 connections++;
 
@@ -93,16 +95,15 @@ public class Server {
         startDrawing();
 
         startQuiz();
+
+
+
     }
 
     public void startQuiz() {
 
         for (Player player : playersList) {
-            QuizRound round = new QuizRound(player, this);
-
-            service.submit(round);
-
-            new PrintStream(player.getOut());
+            quizService.submit(new QuizRound(player, this));
 
         }
     }
@@ -117,21 +118,22 @@ public class Server {
             mates = "|              Quiz will start in 3 seconds...       |\n";
         }
 
+        broadcast("\n\n                        .-\"\"\"-.\n" +
+                "                       / .===. \\\n" +
+                "                       \\/ 6 6 \\/\n" +
+                "                       ( \\___/ )\n" +
+                "  _________________ooo__\\_____/_____________________\n" +
+                " /                                                  \\\n" +
+                mates +
+                " \\______________________________ooo_________________/\n" +
+                "                       |  |  |\n" +
+                "                       |_ | _|\n" +
+                "                       |  |  |\n" +
+                "                       |__|__|\n" +
+                "                       /-'Y'-\\\n" +
+                "                      (__/ \\__)\n\n");
+
         try {
-            broadcast("\n\n                        .-\"\"\"-.\n" +
-                    "                       / .===. \\\n" +
-                    "                       \\/ 6 6 \\/\n" +
-                    "                       ( \\___/ )\n" +
-                    "  _________________ooo__\\_____/_____________________\n" +
-                    " /                                                  \\\n" +
-                    mates +
-                    " \\______________________________ooo_________________/\n" +
-                    "                       |  |  |\n" +
-                    "                       |_ | _|\n" +
-                    "                       |  |  |\n" +
-                    "                       |__|__|\n" +
-                    "                       /-'Y'-\\\n" +
-                    "                      (__/ \\__)\n\n");
             Thread.sleep(3000);
 
         } catch (InterruptedException e) {

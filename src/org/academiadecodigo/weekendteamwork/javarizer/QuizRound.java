@@ -13,7 +13,7 @@ public class QuizRound implements Runnable{
     /**
      * fields
      */
-    private final String path = "resources/quiz.txt";
+    private final String path = "/home/joaompalmeida/Desktop/projects/javarizer/resources/quiz.txt";
     private final String beforeMenu;
 
     private FileReader fileReader;
@@ -54,6 +54,7 @@ public class QuizRound implements Runnable{
 
     public void round() {
 
+
         try {
             String line = "";
 
@@ -61,8 +62,10 @@ public class QuizRound implements Runnable{
                 list.add(line);
             }
 
+
             int counter = 0;
             int roundCounter = 0;
+
 
             while (counter < list.size()) {
 
@@ -114,7 +117,6 @@ public class QuizRound implements Runnable{
 
     @Override
     public void run() {
-
         round();
     }
 
@@ -173,19 +175,17 @@ public class QuizRound implements Runnable{
     }
 
     private void displayWinners(){
+        server.broadcast("\n==========================================\n");
+
         if (winners.size() > 1) {
-            server.broadcast("");
-            server.broadcast("==============");
             server.broadcast("TIE BETWEEN");
             for (String names : winners) {
                 server.broadcast(names.substring(0, 1).toUpperCase() + names.substring(1));
             }
         } else {
-            server.broadcast("==============");
             server.broadcast("WINNER");
             server.broadcast(winners.getFirst());
         }
-        //server.broadcast("==============");
     }
 
 }
