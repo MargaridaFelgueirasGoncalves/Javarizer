@@ -16,6 +16,7 @@ public class QuizRound implements Runnable{
     private List<String> list;
     private Player player;
     private Server server;
+    private String beforeMenu;
 
 
     public QuizRound(Player player, Server server) {
@@ -23,6 +24,7 @@ public class QuizRound implements Runnable{
         list = new LinkedList<>();
         this.server = server;
         initIO();
+        beforeMenu = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
     }
 
     public void initIO() {
@@ -65,6 +67,7 @@ public class QuizRound implements Runnable{
                 MenuInputScanner menuInputScanner = new MenuInputScanner(menu);
                 menuInputScanner.setMessage(question);
 
+                player.getOut().println(beforeMenu);
                 int playersAnswer = player.getPrompt().getUserInput(menuInputScanner);
 
                 //wait();
