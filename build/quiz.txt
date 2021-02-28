@@ -1,0 +1,72 @@
+QUESTION 1/12 - What is a correct syntax to output "Hello World" in Java?
+System.out.println("Hello World");
+print ("Hello World");
+Console.WriteLine("Hello World");
+echo("Hello World");
+1-System.out.println("Hello World");
+QUESTION 2/12 - Which of these allows duplicate elements?
+Set
+List
+All
+None of the above
+2-List
+QUESTION 3/12 - What is a constructor?
+Another name for an instance variable
+The return type of a method
+The method that creates an object, or instance, of the class
+The instantiation of an object
+3-The method that creates an object, or instance, of the class
+QUESTION 4/12 - What guarantees type-safety in a collection?
+Generics
+Abstract classes
+Interfaces
+Collection
+1-Generics
+QUESTION 5/12 - What is the average air speed velocity of a laden swallow?
+While carrying a coconut?
+What do you mean, an African or European Swallow?
+Swallows don't fly.
+You have to take the difference between ground speed and the wind speed.
+2-What do you mean, an African or European Swallow?
+QUESTION 6/12 - Which of these is synchronized?
+ArrayList
+LinkedList
+Vector
+None of those
+3-Vector
+QUESTION 7/12 - LinkedList implements?
+Deque
+List
+None of the above
+Both of the above
+4-Both of the above
+QUESTION 8/12 - How many bones are there in the human body?
+206
+205
+201
+209
+1-206
+QUESTION 9/12 - In iterator, how do you get the next element?
+next()
+getNext()
+returnNext()
+name remains same
+1-next()
+QUESTION 10/12 - What are the four pillars of object-oriented programming?
+Encapsulation, Specialization, Division of Responsibility, Data Hiding
+Abstraction, Encapsulation, Inheritance, Polymorphism
+Composition, Inheritance, Polymorphism, Encapsulation
+Abstraction, Composition, Inheritance, Encapsulation, Polymorphism
+2-Abstraction, Encapsulation, Inheritance, Polymorphism
+QUESTION 11/12 - How many threads can be executed at a time?
+Only one thread
+Multiple threads
+Only main (main() method) thread
+Two threads
+2-Multiple threads
+QUESTION 12/12 - What is the best bootcamp ever?
+Javapeños
+ASYNCtomatics
+Stringrays
+It is still to come...
+2-ASYNCtomatics

@@ -13,7 +13,7 @@ public class QuizRound implements Runnable{
     /**
      * fields
      */
-    private final String path = "resources/quiz.txt";
+    private final String path = "quiz.txt";
     private final String beforeMenu;
 
     private FileReader fileReader;
@@ -182,12 +182,12 @@ public class QuizRound implements Runnable{
                 server.broadcast(names.substring(0, 1).toUpperCase() + names.substring(1));
             }
 
-            server.broadcast(Color.WHITE + "\nTry again! You can do it 👍");
+            server.broadcast(Color.WHITE + "\nTry again! You can do it!");
 
         } else {
             server.broadcast(Color.GREEN + "And the winner is...\n");
             server.broadcast(Color.MAGENTA + winners.getFirst());
-            server.broadcast(Color.WHITE + "\nCongratulations! ❤");
+            server.broadcast(Color.WHITE + "\nCongratulations!");
         }
     }
 
