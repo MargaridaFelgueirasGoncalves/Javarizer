@@ -23,6 +23,9 @@ public class QuizRound implements Runnable{
     private Player player;
     private Server server;
 
+    private int maxPoint;
+    private LinkedList<String> winners;
+
     /**
      * constructor
      * @param player
@@ -146,7 +149,7 @@ public class QuizRound implements Runnable{
 
 
         int maxPoints = 0;
-        LinkedList<String> winners = new LinkedList<>();
+        winners = new LinkedList<>();
 
         for (Player player : server.getPlayersList()) {
             if (player.getScore() > maxPoints) {
@@ -164,21 +167,25 @@ public class QuizRound implements Runnable{
             server.broadcast(player.getUsername().toUpperCase() + ": " + player.getScore() + " correct answers.");
         }
 
-        for (Player player : server.getPlayersList()){
-            if (winners.size() > 1) {
-                server.broadcast("");
-                server.broadcast("==============");
-                server.broadcast("Tie between");
-                for (String names : winners) {
-                    server.broadcast(names.substring(0, 1).toUpperCase() + names.substring(1));
-                }
-                server.broadcast("==============");
-            } else {
-                server.broadcast("==============");
-                server.broadcast("Winner");
-                server.broadcast(winners.getFirst());
-                server.broadcast("==============");
-            }
-        }
+        displayWinners();
+
+
     }
+
+    private void displayWinners(){
+        if (winners.size() > 1) {
+            server.broadcast("");
+            server.broadcast("==============");
+            server.broadcast("TIE BETWEEN");
+            for (String names : winners) {
+                server.broadcast(names.substring(0, 1).toUpperCase() + names.substring(1));
+            }
+        } else {
+            server.broadcast("==============");
+            server.broadcast("WINNER");
+            server.broadcast(winners.getFirst());
+        }
+        //server.broadcast("==============");
+    }
+
 }

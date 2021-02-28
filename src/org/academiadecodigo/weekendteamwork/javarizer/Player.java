@@ -48,7 +48,7 @@ public class Player implements Runnable {
         prompt = new Prompt(in, out);
     }
 
-    public synchronized int limitPlayers() {
+    public int limitPlayers() {
 
         prompt = new Prompt(in, out);
         IntegerInputScanner scanner = new IntegerInputScanner();
