@@ -4,7 +4,7 @@ print ("Hello World");
 Console.WriteLine("Hello World");
 echo("Hello World");
 1-System.out.println("Hello World");
-QUESTION 2/12 - Which of those allows duplicate elements?
+QUESTION 2/12 - Which of these allows duplicate elements?
 Set
 List
 All
@@ -46,7 +46,7 @@ QUESTION 8/12 - How many bones are there in the human body?
 201
 209
 1-206
-QUESTION 9/12 - In iterator, nextElement() method of Enumeration has been changed to:
+QUESTION 9/12 - In iterator, how do you get the next element?
 next()
 getNext()
 returnNext()

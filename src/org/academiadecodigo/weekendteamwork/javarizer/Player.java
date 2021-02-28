@@ -3,6 +3,7 @@ package org.academiadecodigo.weekendteamwork.javarizer;
 import org.academiadecodigo.bootcamp.Prompt;
 import org.academiadecodigo.bootcamp.scanners.integer.IntegerInputScanner;
 import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
+import org.academiadecodigo.weekendteamwork.javarizer.util.Color;
 
 import java.io.*;
 import java.net.Socket;
@@ -50,7 +51,7 @@ public class Player implements Runnable {
 
         prompt = new Prompt(in, out);
         IntegerInputScanner scanner = new IntegerInputScanner();
-        scanner.setMessage("How many players? ");
+        scanner.setMessage("\nHow many players? ");
 
         return prompt.getUserInput(scanner);
     }
@@ -86,7 +87,7 @@ public class Player implements Runnable {
                 "\\______|    \\/           \\/               \\/    \\/       \n";
 
 
-        out.println(javarizer);
+        out.println(Color.GREEN + javarizer + Color.WHITE);
     }
 
     /**

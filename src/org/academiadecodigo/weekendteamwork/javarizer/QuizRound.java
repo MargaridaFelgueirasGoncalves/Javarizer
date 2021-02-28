@@ -32,7 +32,7 @@ public class QuizRound implements Runnable{
         list = new LinkedList<>();
         this.server = server;
         initIO();
-        beforeMenu = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+        beforeMenu = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
     }
 
     public void initIO() {
@@ -82,7 +82,7 @@ public class QuizRound implements Runnable{
                     player.incrementScore();
                     System.out.println("score " + player.getScore());
                 }
-                player.getOut().println("\n>> correct answer: " + correctAnswer + "\n");
+                player.getOut().println("\n>> Correct answer: " + correctAnswer + "\n");
 
                 if (counter == list.size()){
                     player.setFinished(true);
