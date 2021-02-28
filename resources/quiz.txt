@@ -22,7 +22,7 @@ Abstract classes
 Interfaces
 Collection
 1-Generics
-QUESTION 5/12 - What is the average air speed velocity of a laden swallow?
+QUESTION 5/12 - What is the average air speed velocity of an unladen swallow?
 While carrying a coconut?
 What do you mean, an African or European Swallow?
 Swallows don't fly.
@@ -50,7 +50,7 @@ QUESTION 9/12 - In iterator, how do you get the next element?
 next()
 getNext()
 returnNext()
-name remains same
+nextElement()
 1-next()
 QUESTION 10/12 - What are the four pillars of object-oriented programming?
 Encapsulation, Specialization, Division of Responsibility, Data Hiding

@@ -94,8 +94,6 @@ public class Server {
 
         startQuiz();
 
-
-
     }
 
     public void startQuiz() {

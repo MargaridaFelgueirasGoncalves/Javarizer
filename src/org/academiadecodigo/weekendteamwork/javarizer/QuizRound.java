@@ -13,7 +13,7 @@ public class QuizRound implements Runnable{
     /**
      * fields
      */
-    private final String path = "quiz.txt";
+    private final String path = "resources/quiz.txt";
     private final String beforeMenu;
 
     private FileReader fileReader;
@@ -54,7 +54,6 @@ public class QuizRound implements Runnable{
 
     public void round() {
 
-
         try {
             String line = "";
 
@@ -62,10 +61,8 @@ public class QuizRound implements Runnable{
                 list.add(line);
             }
 
-
             int counter = 0;
             int roundCounter = 0;
-
 
             while (counter < list.size()) {
 
