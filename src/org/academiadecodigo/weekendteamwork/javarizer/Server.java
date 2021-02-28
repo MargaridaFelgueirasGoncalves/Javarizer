@@ -89,7 +89,7 @@ public class Server {
         checkPlayers(playersList);
 
         try {
-            broadcast("\n\n+\n                        .-\"\"\"-.\n" +
+            broadcast("\n\n                        .-\"\"\"-.\n" +
                     "                       / .===. \\\n" +
                     "                       \\/ 6 6 \\/\n" +
                     "                       ( \\___/ )\n" +
@@ -144,8 +144,8 @@ public class Server {
     public void broadcast (String string) {
 
         for (Player player : playersList) {
-            PrintStream writter = new PrintStream(player.getOut());
-            writter.println(string);
+            PrintStream writer = new PrintStream(player.getOut());
+            writer.println(string);
         }
     }
 

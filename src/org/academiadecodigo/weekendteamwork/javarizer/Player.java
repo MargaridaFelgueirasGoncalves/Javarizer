@@ -71,7 +71,7 @@ public class Player implements Runnable {
         System.out.println("Username: " + username);
 
         PrintStream writer = new PrintStream(out);
-        writer.println("\n** Welcome, " + username + "! **\n");
+        writer.println("\n** Welcome, " + username + "! **");
 
         return username;
     }
