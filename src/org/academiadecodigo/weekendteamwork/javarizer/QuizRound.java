@@ -56,7 +56,8 @@ public class QuizRound implements Runnable{
                 String answer2 = list.get(counter++);
                 String answer3 = list.get(counter++);
                 String answer4 = list.get(counter++);
-                int correctAnswer = Integer.parseInt(list.get(counter++));
+                int numberCorrectAnswer = Integer.parseInt(list.get(counter).split("-")[0]);
+                String correctAnswer = list.get(counter++).split("-")[1];
 
                 // menu
                 String[] menu = {answer1, answer2, answer3, answer4};
@@ -70,7 +71,7 @@ public class QuizRound implements Runnable{
 
                 // if answer is correctAnswer, increase score
 
-                if (playersAnswer == correctAnswer) {
+                if (playersAnswer == numberCorrectAnswer) {
                     player.incrementScore();
                     System.out.println("score " + player.getScore());
                 }

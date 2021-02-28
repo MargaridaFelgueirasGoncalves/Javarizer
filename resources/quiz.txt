@@ -3,64 +3,64 @@ System.out.println("Hello World");
 print ("Hello World");
 Console.WriteLine("Hello World");
 echo("Hello World");
-1
-QUESTION 2/12 - Which of those allows duplicate elements?
+1-System.out.println("Hello World");
+Which of those allows duplicate elements?
 Set
 List
 All
 None of the above
-2
-QUESTION 3/12 - What is a constructor?
+2-List
+What is a constructor?
 Another name for an instance variable
 The return type of a method
 The method that creates an object, or instance, of the class
 The instantiation of an object
-3
-QUESTION 4/12 - What guarantees type-safety in a collection?
+3-The method that creates an object, or instance, of the class
+What guarantees type-safety in a collection?
 Generics
 Abstract classes
 Interfaces
 Collection
-1
-QUESTION 5/12 - What is the average air speed velocity of a laden swallow?
+1-Generics
+What is the average air speed velocity of a laden swallow?
 While carrying a coconut?
 What do you mean, an African or European Swallow?
 Swallows don't fly.
 You have to take the difference between ground speed and the wind speed.
-2
-QUESTION 6/12 - Which of these is synchronized?
+2-What do you mean, an African or European Swallow?
+Which of these is synchronized?
 ArrayList
 LinkedList
 Vector
 None of those
-3
-QUESTION 7/12 - LinkedList implements?
+3-Vector
+LinkedList implements?
 Deque
 List
 None of the above
 Both of the above
-4
-QUESTION 8/12 - How many bones are there in the human body?
+4-Both of the above
+How many bones are there in the human body?
 206
 205
 201
 209
-1
-QUESTION 9/12 - In iterator, nextElement() method of Enumeration has been changed to:
+1-206
+In iterator, nextElement() method of Enumeration has been changed to:
 next()
 getNext()
 returnNext()
 name remains same
-1
-QUESTION 10/12 - What are the four pillars of object-oriented programming?
+1-next()
+What are the four pillars of object-oriented programming?
 Encapsulation, Specialization, Division of Responsibility, Data Hiding
 Abstraction, Encapsulation, Inheritance, Polymorphism
 Composition, Inheritance, Polymorphism, Encapsulation
 Abstraction, Composition, Inheritance, Encapsulation, Polymorphism
-2
-QUESTION 11/12 - How many threads can be executed at a time?
+2-Abstraction, Encapsulation, Inheritance, Polymorphism
+How many threads can be executed at a time?
 Only one thread
 Multiple threads
 Only main (main() method) thread
 Two threads
-2
+2-Multiple threads
