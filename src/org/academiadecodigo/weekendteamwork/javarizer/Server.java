@@ -31,7 +31,7 @@ public class Server {
         playersList = Collections.synchronizedList(new LinkedList<>());
 
         connections = 0;
-        maxConnections = 2;
+        maxConnections = 10;
 
         try {
             serverSocket = new ServerSocket(port);
@@ -67,9 +67,10 @@ public class Server {
 
                 Player player = new Player(playerSocket, this);
 
-
                 // add player to the list
                 playersList.add(player);
+
+                limitPlayers(player);
 
                 player.setUsername(player.askUsername());
 
@@ -143,6 +144,15 @@ public class Server {
         for (Player player : playersList) {
             PrintStream writter = new PrintStream(player.getOut());
             writter.println(string);
+
+        }
+    }
+
+    public void limitPlayers (Player player) {
+
+        if (connections== 0) {
+
+            maxConnections=player.limitPlayers();
 
         }
     }

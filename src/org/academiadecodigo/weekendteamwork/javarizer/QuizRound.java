@@ -119,7 +119,7 @@ public class QuizRound implements Runnable{
 
         for (Player player : server.getPlayersList()) {
 
-            server.broadcast( player.getUsername().toUpperCase(Locale.ROOT) + " :" + player.getScore() + " correct answers.");
+            server.broadcast( player.getUsername().toUpperCase(Locale.ROOT) + ": " + player.getScore() + " correct answers.");
 
         }
 

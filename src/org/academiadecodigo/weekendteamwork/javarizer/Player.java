@@ -46,16 +46,15 @@ public class Player implements Runnable {
 
     }
 
-    public synchronized void limitPlayers() {
+    public synchronized int limitPlayers() {
 
-        if (server.getConnections() == 1) {
+        prompt = new Prompt(in, out);
+        IntegerInputScanner scanner = new IntegerInputScanner();
+        scanner.setMessage("How many players? ");
+        int limit = prompt.getUserInput(scanner);
 
-            IntegerInputScanner scanner = new IntegerInputScanner();
-            scanner.setMessage("How many players: ");
+        return limit;
 
-            server.setMaxConnections(prompt.getUserInput(scanner));
-
-        }
     }
 
     public String askUsername() {
