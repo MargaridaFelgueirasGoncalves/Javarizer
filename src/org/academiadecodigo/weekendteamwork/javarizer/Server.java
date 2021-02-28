@@ -88,6 +88,25 @@ public class Server {
 
         checkPlayers(playersList);
 
+        startDrawing();
+
+        startQuiz();
+    }
+
+    public void startQuiz() {
+
+        for (Player player : playersList) {
+            QuizRound round = new QuizRound(player, this);
+
+            service.submit(round);
+
+            new PrintStream(player.getOut());
+
+        }
+    }
+
+    public void startDrawing() {
+
         try {
             broadcast("\n\n                        .-\"\"\"-.\n" +
                     "                       / .===. \\\n" +
@@ -107,20 +126,6 @@ public class Server {
 
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-
-        startQuiz();
-    }
-
-    public void startQuiz() {
-
-        for (Player player : playersList) {
-            QuizRound round = new QuizRound(player, this);
-
-            service.submit(round);
-
-            new PrintStream(player.getOut());
-
         }
     }
 

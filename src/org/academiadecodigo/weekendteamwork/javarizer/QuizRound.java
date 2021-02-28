@@ -87,7 +87,7 @@ public class QuizRound implements Runnable{
                 if (counter == list.size()){
                     player.setFinished(true);
 
-                    player.getOut().println("\n** Waiting for other players to finnish... **\n");
+                    drawingGameOver();
                 }
             }
 
@@ -105,6 +105,24 @@ public class QuizRound implements Runnable{
     public void run() {
 
         round();
+    }
+
+    public void drawingGameOver() {
+
+        player.getOut().println("\n\n                        .-\"\"\"-.\n" +
+                "                       / .===. \\\n" +
+                "                       \\/ 6 6 \\/\n" +
+                "                       ( \\___/ )\n" +
+                "  _________________ooo__\\_____/_____________________\n" +
+                " /                                                  \\\n" +
+                "|            Game Over... Waiting for results!       |\n" +
+                " \\______________________________ooo_________________/\n" +
+                "                       |  |  |\n" +
+                "                       |_ | _|\n" +
+                "                       |  |  |\n" +
+                "                       |__|__|\n" +
+                "                       /-'Y'-\\\n" +
+                "                      (__/ \\__)\n\n");
     }
 
     public void getResults(){
