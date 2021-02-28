@@ -76,8 +76,6 @@ public class Server {
 
                 player.setUsername(player.askUsername());
 
-                if (maxConnections == 1) player.getOut().println("So I see you have no friends... Just like me...");
-
                 if (connections < maxConnections - 1) player.getOut().println("Let's wait for the other players...");
 
                 // start thread pool
@@ -112,7 +110,7 @@ public class Server {
 
         String mates;
 
-        if ( maxConnections == 1) {
+        if (maxConnections == 1) {
             mates = "|  So I see you have no friends... Just like me...   |\n";
         } else{
             mates = "|              Quiz will start in 3 seconds...       |\n";

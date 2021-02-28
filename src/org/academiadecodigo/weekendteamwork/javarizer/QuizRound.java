@@ -13,7 +13,7 @@ public class QuizRound implements Runnable{
     /**
      * fields
      */
-    private final String path = "/home/joaompalmeida/Desktop/projects/javarizer/resources/quiz.txt";
+    private final String path = "resources/quiz.txt";
     private final String beforeMenu;
 
     private FileReader fileReader;
@@ -122,7 +122,7 @@ public class QuizRound implements Runnable{
 
     public void drawingGameOver() {
 
-        player.getOut().println("\n\n                        .-\"\"\"-.\n" +
+        player.getOut().println("\n                        .-\"\"\"-.\n" +
                 "                       / .===. \\\n" +
                 "                       \\/ 6 6 \\/\n" +
                 "                       ( \\___/ )\n" +
@@ -149,7 +149,6 @@ public class QuizRound implements Runnable{
 
     public void displayResults() {
 
-
         int maxPoints = 0;
         winners = new LinkedList<>();
 
@@ -170,21 +169,25 @@ public class QuizRound implements Runnable{
         }
 
         displayWinners();
-
-
     }
 
     private void displayWinners(){
-        server.broadcast("\n==========================================\n");
+        server.broadcast(Color.CYAN + "\n======================================================\n");
 
         if (winners.size() > 1) {
-            server.broadcast("TIE BETWEEN");
+
+            server.broadcast(Color.GREEN + "And we've got a tie between our players:\n" + Color.MAGENTA);
+
             for (String names : winners) {
                 server.broadcast(names.substring(0, 1).toUpperCase() + names.substring(1));
             }
+
+            server.broadcast(Color.WHITE + "\nTry again! You can do it 👍");
+
         } else {
-            server.broadcast("WINNER");
-            server.broadcast(winners.getFirst());
+            server.broadcast(Color.GREEN + "And the winner is...\n");
+            server.broadcast(Color.MAGENTA + winners.getFirst());
+            server.broadcast(Color.WHITE + "\nCongratulations! ❤");
         }
     }
 
