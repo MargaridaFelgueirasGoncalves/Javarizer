@@ -15,11 +15,13 @@ public class Server {
     /**
      * fields
      */
+    private int connections;
+    private int maxConnections;
+
     private ServerSocket serverSocket;
     private final ExecutorService service;
     private final List<Player> playersList;
-    private int connections;
-    private int maxConnections;
+
     private QuizRound quizRound;
 
     /**
@@ -38,7 +40,6 @@ public class Server {
 
         } catch (IOException e) {
             e.printStackTrace();
-
         }
     }
 
@@ -46,6 +47,7 @@ public class Server {
      * method called in main
      */
     public void start() {
+
         waitConnection();
     }
 
@@ -59,11 +61,9 @@ public class Server {
         while (connections != maxConnections) {
 
             try {
-
                 System.out.println("Waiting for connection...");
                 Socket playerSocket = serverSocket.accept();
                 System.out.println("New client connection" + playerSocket);
-
 
                 Player player = new Player(playerSocket, this);
 
@@ -80,25 +80,22 @@ public class Server {
                 service.submit(player);
 
                 connections++;
-                System.out.println(connections);
 
             } catch (IOException e) {
                 System.err.println("Error establishing connection: " + e.getMessage());
-
             }
         }
 
         checkPlayers(playersList);
 
         try {
-
             broadcast("\n\n+\n                        .-\"\"\"-.\n" +
                     "                       / .===. \\\n" +
                     "                       \\/ 6 6 \\/\n" +
                     "                       ( \\___/ )\n" +
                     "  _________________ooo__\\_____/_____________________\n" +
                     " /                                                  \\\n" +
-                    "|               Game wil start in 5 seconds...       |\n" +
+                    "|              Game will start in 5 seconds...       |\n" +
                     " \\______________________________ooo_________________/\n" +
                     "                       |  |  |\n" +
                     "                       |_ | _|\n" +
@@ -112,61 +109,58 @@ public class Server {
             e.printStackTrace();
         }
 
-        startQuiz(quizRound);
-
-
+        startQuiz();
     }
 
-    public void startQuiz(QuizRound round) {
+    public void startQuiz() {
 
         for (Player player : playersList) {
-            round = new QuizRound(player, this);
+            QuizRound round = new QuizRound(player, this);
 
             service.submit(round);
 
-            PrintStream writer = new PrintStream(player.getOut());
+            new PrintStream(player.getOut());
 
         }
     }
 
+    /**
+     * method to get players username
+     * @param playersList
+     */
     public void checkPlayers(List<Player> playersList){
 
         for (Player player: playersList){
             if (player.getUsername() == null){
                 checkPlayers(playersList);
-
             }
         }
     }
 
+    /**
+     * broadcast a string to all players
+     * @param string
+     */
     public void broadcast (String string) {
 
         for (Player player : playersList) {
             PrintStream writter = new PrintStream(player.getOut());
             writter.println(string);
-
         }
     }
 
+    /**
+     * method to limit number of players in order to start with a fixed number
+     * @param player
+     */
     public void limitPlayers (Player player) {
 
         if (connections== 0) {
-
             maxConnections=player.limitPlayers();
-
         }
     }
 
     // getter
-    public int getConnections() {
-        return connections;
-    }
-
-    // setter
-    public void setMaxConnections(int maxConnections) {
-        this.maxConnections = maxConnections;
-    }
-
     public List<Player> getPlayersList() {
         return playersList;
     }

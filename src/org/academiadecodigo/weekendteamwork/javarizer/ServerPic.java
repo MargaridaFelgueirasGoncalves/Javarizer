@@ -1,6 +1,5 @@
 package org.academiadecodigo.weekendteamwork.javarizer;
 
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class ServerPic {
@@ -8,7 +7,6 @@ public class ServerPic {
     /**
      * fields
      */
-    private Rectangle canvas;
     private final int PADDING = 10;
 
     /**
@@ -16,14 +14,7 @@ public class ServerPic {
      */
     public ServerPic() {
 
-        canvas = new Rectangle(PADDING, PADDING, 610, 400);
-        canvas.fill();
-        addPicture();
-    }
-
-    public void addPicture() {
-
-        Picture javarizer = new Picture(10, 10, "resources/javarizer.png");
+        Picture javarizer = new Picture(PADDING, PADDING, "resources/javarizer.png");
         javarizer.draw();
     }
 }

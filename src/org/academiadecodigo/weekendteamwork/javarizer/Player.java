@@ -12,15 +12,17 @@ public class Player implements Runnable {
     /**
      * fields
      */
+    private String username;
+    private int score;
+    private boolean finished = false;
+
     private Socket playerSocket;
     private final Server server;
+
     private Prompt prompt;
     private DataInputStream in;
     private PrintStream out;
-    private boolean finished = false;
 
-    private String username;
-    private int score;
 
     /**
      * constructor
@@ -43,7 +45,6 @@ public class Player implements Runnable {
     public void run() {
 
         prompt = new Prompt(in, out);
-
     }
 
     public synchronized int limitPlayers() {
@@ -51,10 +52,8 @@ public class Player implements Runnable {
         prompt = new Prompt(in, out);
         IntegerInputScanner scanner = new IntegerInputScanner();
         scanner.setMessage("How many players? ");
-        int limit = prompt.getUserInput(scanner);
 
-        return limit;
-
+        return prompt.getUserInput(scanner);
     }
 
     public String askUsername() {
@@ -71,12 +70,10 @@ public class Player implements Runnable {
         // this will print to the server
         System.out.println("Username: " + username);
 
-        PrintStream writter = new PrintStream(out);
-        writter.println("\n** Welcome, " + username + "! **\n");
-
+        PrintStream writer = new PrintStream(out);
+        writer.println("\n** Welcome, " + username + "! **\n");
 
         return username;
-
     }
 
     public void display() {
@@ -91,23 +88,24 @@ public class Player implements Runnable {
 
 
         out.println(javarizer);
-
     }
 
+    /**
+     * method to increment player's score
+     */
+    public void incrementScore() {
+        this.score++;
+    }
+
+    /**
+     * getters
+     */
     public PrintStream getOut() {
         return out;
     }
 
     public Prompt getPrompt() {
         return prompt;
-    }
-
-    public void incrementScore() {
-        this.score++;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getUsername() {
@@ -118,11 +116,18 @@ public class Player implements Runnable {
         return score;
     }
 
-    public void setFinished(boolean finished) {
-        this.finished = finished;
-    }
-
     public boolean isFinished() {
         return finished;
+    }
+
+    /**
+     * setters
+     */
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
     }
 }

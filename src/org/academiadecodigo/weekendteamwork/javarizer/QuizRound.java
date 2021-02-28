@@ -1,7 +1,6 @@
 package org.academiadecodigo.weekendteamwork.javarizer;
 
 import org.academiadecodigo.bootcamp.scanners.menu.MenuInputScanner;
-
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,17 +8,26 @@ import java.util.Locale;
 
 public class QuizRound implements Runnable{
 
+    /**
+     * fields
+     */
     private final String path = "resources/quiz.txt";
+    private String beforeMenu;
 
     private FileReader fileReader;
     private BufferedReader bReader;
     private List<String> list;
+
     private Player player;
     private Server server;
-    private String beforeMenu;
 
-
+    /**
+     * constructor
+     * @param player
+     * @param server
+     */
     public QuizRound(Player player, Server server) {
+
         this.player = player;
         list = new LinkedList<>();
         this.server = server;
@@ -42,7 +50,6 @@ public class QuizRound implements Runnable{
     public void round() {
 
         try {
-
             String line = "";
 
             while ((line = bReader.readLine()) != null) {
@@ -70,10 +77,7 @@ public class QuizRound implements Runnable{
                 player.getOut().println(beforeMenu);
                 int playersAnswer = player.getPrompt().getUserInput(menuInputScanner);
 
-                //wait();
-
                 // if answer is correctAnswer, increase score
-
                 if (playersAnswer == numberCorrectAnswer) {
                     player.incrementScore();
                     System.out.println("score " + player.getScore());
@@ -84,15 +88,7 @@ public class QuizRound implements Runnable{
                     player.setFinished(true);
 
                     player.getOut().println("\n** Waiting for other players to finnish... **\n");
-
-
                 }
-
-
-
-
-
-
             }
 
             getResults();
@@ -107,12 +103,14 @@ public class QuizRound implements Runnable{
 
     @Override
     public void run() {
+
         round();
     }
 
     public void getResults(){
+
         for (Player player: server.getPlayersList()) {
-            if(player.isFinished() == false){
+            if(!player.isFinished()){
                 getResults();
             }
         }
@@ -121,10 +119,7 @@ public class QuizRound implements Runnable{
     public void displayResults() {
 
         for (Player player : server.getPlayersList()) {
-
-            server.broadcast( player.getUsername().toUpperCase(Locale.ROOT) + ": " + player.getScore() + " correct answers.");
-
+            server.broadcast(player.getUsername().toUpperCase(Locale.ROOT) + ": " + player.getScore() + " correct answers.");
         }
-
     }
 }
