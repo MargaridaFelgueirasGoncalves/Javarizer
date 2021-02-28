@@ -1,6 +1,8 @@
 package org.academiadecodigo.weekendteamwork.javarizer;
 
 import org.academiadecodigo.bootcamp.scanners.menu.MenuInputScanner;
+import org.academiadecodigo.weekendteamwork.javarizer.util.Color;
+
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -72,9 +74,9 @@ public class QuizRound implements Runnable{
                 String[] menu = {answer1, answer2, answer3, answer4};
 
                 MenuInputScanner menuInputScanner = new MenuInputScanner(menu);
-                menuInputScanner.setMessage(question);
+                menuInputScanner.setMessage(Color.GREEN + question + Color.WHITE);
 
-                player.getOut().println(beforeMenu);
+                player.getOut().println(Color.CYAN + beforeMenu + Color.WHITE);
                 int playersAnswer = player.getPrompt().getUserInput(menuInputScanner);
 
                 // if answer is correctAnswer, increase score
@@ -82,7 +84,7 @@ public class QuizRound implements Runnable{
                     player.incrementScore();
                     System.out.println("score " + player.getScore());
                 }
-                player.getOut().println("\n>> Correct answer: " + correctAnswer + "\n");
+                player.getOut().println('\n' + Color.MAGENTA + ">> Correct answer: " + correctAnswer + '\n' + Color.WHITE);
 
                 if (counter == list.size()){
                     player.setFinished(true);
@@ -115,7 +117,7 @@ public class QuizRound implements Runnable{
                 "                       ( \\___/ )\n" +
                 "  _________________ooo__\\_____/_____________________\n" +
                 " /                                                  \\\n" +
-                "|            Game Over... Waiting for results!       |\n" +
+                "|            Quiz Over... Waiting for results!       |\n" +
                 " \\______________________________ooo_________________/\n" +
                 "                       |  |  |\n" +
                 "                       |_ | _|\n" +
@@ -137,7 +139,7 @@ public class QuizRound implements Runnable{
     public void displayResults() {
 
         for (Player player : server.getPlayersList()) {
-            server.broadcast(player.getUsername().toUpperCase(Locale.ROOT) + ": " + player.getScore() + " correct answers.");
+            server.broadcast(player.getUsername().toUpperCase() + ": " + player.getScore() + " correct answers.");
         }
     }
 }

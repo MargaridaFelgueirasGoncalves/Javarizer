@@ -7,6 +7,7 @@ import org.academiadecodigo.weekendteamwork.javarizer.util.Color;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.Locale;
 
 public class Player implements Runnable {
 
@@ -71,7 +72,7 @@ public class Player implements Runnable {
         System.out.println("Username: " + username);
 
         PrintStream writer = new PrintStream(out);
-        writer.println("\n** Welcome, " + username + "! **");
+        writer.println('\n' + Color.MAGENTA + "** Welcome, " + username.substring(0,1).toUpperCase() + username.substring(1) + "! **" + Color.WHITE);
 
         return username;
     }

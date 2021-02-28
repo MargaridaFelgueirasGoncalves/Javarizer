@@ -114,7 +114,7 @@ public class Server {
                     "                       ( \\___/ )\n" +
                     "  _________________ooo__\\_____/_____________________\n" +
                     " /                                                  \\\n" +
-                    "|              Game will start in 5 seconds...       |\n" +
+                    "|              Quiz will start in 5 seconds...       |\n" +
                     " \\______________________________ooo_________________/\n" +
                     "                       |  |  |\n" +
                     "                       |_ | _|\n" +
@@ -130,7 +130,7 @@ public class Server {
     }
 
     /**
-     * method to get players username
+     * method to get players username and check for null usernames
      * @param playersList
      */
     public void checkPlayers(List<Player> playersList){
