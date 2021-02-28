@@ -73,7 +73,7 @@ public class Server {
 
                 player.setUsername(player.askUsername());
 
-                if (connections < maxConnections - 1) player.getOut().println("waiting for other players...");
+                if (connections < maxConnections - 1) player.getOut().println("Let's wait for the other players...");
 
                 // start thread pool
                 service.submit(player);

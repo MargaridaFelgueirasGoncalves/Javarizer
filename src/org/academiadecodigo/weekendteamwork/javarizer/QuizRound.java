@@ -5,6 +5,7 @@ import org.academiadecodigo.bootcamp.scanners.menu.MenuInputScanner;
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 public class QuizRound implements Runnable{
 
@@ -73,7 +74,7 @@ public class QuizRound implements Runnable{
                     player.incrementScore();
                     System.out.println("score " + player.getScore());
                 }
-                player.getOut().println("correct answer is: " + correctAnswer);
+                player.getOut().println("\ncorrect answer: " + correctAnswer);
 
                 if (counter == list.size()){
                     player.setFinished(true);
@@ -107,7 +108,7 @@ public class QuizRound implements Runnable{
 
         for (Player player : server.getPlayersList()) {
 
-            server.broadcast("\n" + player.getUsername() + " :" + player.getScore() + " correct answers.");
+            server.broadcast( player.getUsername().toUpperCase(Locale.ROOT) + " :" + player.getScore() + " correct answers.");
 
         }
 
