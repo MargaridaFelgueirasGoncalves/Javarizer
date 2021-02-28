@@ -74,11 +74,21 @@ public class QuizRound implements Runnable{
                     player.incrementScore();
                     System.out.println("score " + player.getScore());
                 }
-                player.getOut().println("\ncorrect answer: " + correctAnswer);
+                player.getOut().println("\n>> correct answer: " + correctAnswer + "\n");
 
                 if (counter == list.size()){
                     player.setFinished(true);
+
+                    player.getOut().println("\n** Waiting for other players to finnish... **\n");
+
+
                 }
+
+
+
+
+
+
             }
 
             getResults();

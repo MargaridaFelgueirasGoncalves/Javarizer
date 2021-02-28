@@ -116,8 +116,6 @@ public class Server {
 
     }
 
-
-
     public void startQuiz(QuizRound round) {
 
         for (Player player : playersList) {
@@ -130,7 +128,6 @@ public class Server {
         }
     }
 
-
     public void checkPlayers(List<Player> playersList){
 
         for (Player player: playersList){
@@ -140,7 +137,6 @@ public class Server {
             }
         }
     }
-
 
     public void broadcast (String string) {
 
