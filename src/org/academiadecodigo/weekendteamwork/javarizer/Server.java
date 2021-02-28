@@ -59,6 +59,7 @@ public class Server {
         while (connections != maxConnections) {
 
             try {
+
                 System.out.println("Waiting for connection...");
                 Socket playerSocket = serverSocket.accept();
                 System.out.println("New client connection" + playerSocket);
@@ -66,10 +67,13 @@ public class Server {
 
                 Player player = new Player(playerSocket, this);
 
+
                 // add player to the list
                 playersList.add(player);
 
                 player.setUsername(player.askUsername());
+
+                if (connections < maxConnections - 1) player.getOut().println("waiting for other players...");
 
                 // start thread pool
                 service.submit(player);
@@ -83,12 +87,11 @@ public class Server {
             }
         }
 
-        System.out.println("aqui");
         checkPlayers(playersList);
 
-
         try {
-            Thread.sleep(1000);
+            broadcast("\nGame starts in 5 seconds...");
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

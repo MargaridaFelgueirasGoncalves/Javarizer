@@ -72,7 +72,6 @@ public class Player implements Runnable {
         // this will print to the server
         System.out.println("Username: " + username);
 
-        out.println("Waiting for other players to connect...");
 
         return username;
 
