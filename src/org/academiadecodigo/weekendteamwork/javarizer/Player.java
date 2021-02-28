@@ -17,6 +17,7 @@ public class Player implements Runnable {
     private Prompt prompt;
     private DataInputStream in;
     private PrintStream out;
+    private boolean finished = false;
 
     private String username;
     private int score;
@@ -114,5 +115,13 @@ public class Player implements Runnable {
 
     public int getScore() {
         return score;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
+    }
+
+    public boolean isFinished() {
+        return finished;
     }
 }

@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/QuizRound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/QuizRound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/weekendteamwork/javarizer/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +63,18 @@
       <option name="presentableId" value="Default" />
       <updated>1614440264032</updated>
     </task>
+    <task id="LOCAL-00001" summary="implement score counter for players">
+      <created>1614470380783</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614470380783</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="implement score counter for players" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement score counter for players" />
   </component>
 </project>

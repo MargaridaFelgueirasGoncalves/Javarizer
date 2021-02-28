@@ -49,7 +49,6 @@ public class QuizRound implements Runnable{
 
             int counter = 0;
 
-
             while (counter < list.size()) {
 
                 String question = list.get(counter++);
@@ -76,6 +75,16 @@ public class QuizRound implements Runnable{
                     System.out.println("score " + player.getScore());
                 }
                 player.getOut().println("correct answer is: " + correctAnswer);
+
+                if (counter == list.size()){
+                    player.setFinished(true);
+                }
+            }
+
+            getResults();
+
+            for (Player player: server.getPlayersList()) {
+                player.getOut().println("win!!!");
             }
 
             /**
@@ -83,8 +92,9 @@ public class QuizRound implements Runnable{
              * falta fazer
              */
 
-            player.getOut().close();
 
+
+//            player.getOut().close();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -94,5 +104,13 @@ public class QuizRound implements Runnable{
     @Override
     public void run() {
         round();
+    }
+
+    public void getResults(){
+        for (Player player: server.getPlayersList()) {
+            if(player.isFinished() == false){
+                getResults();
+            }
+        }
     }
 }
