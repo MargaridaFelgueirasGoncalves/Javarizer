@@ -74,6 +74,8 @@ public class Server {
 
                 player.setUsername(player.askUsername());
 
+                if (maxConnections == 1) player.getOut().println("So I see you have no friends... Just like me...");
+
                 if (connections < maxConnections - 1) player.getOut().println("Let's wait for the other players...");
 
                 // start thread pool
@@ -107,6 +109,16 @@ public class Server {
 
     public void startDrawing() {
 
+        String mates;
+
+        if ( maxConnections == 1) {
+            mates = "|  So I see you have no friends... Just like me...   |\n";
+        } else{
+            mates = "|              Quiz will start in 5 seconds...       |\n";
+        }
+
+
+
         try {
             broadcast("\n\n                        .-\"\"\"-.\n" +
                     "                       / .===. \\\n" +
@@ -114,7 +126,7 @@ public class Server {
                     "                       ( \\___/ )\n" +
                     "  _________________ooo__\\_____/_____________________\n" +
                     " /                                                  \\\n" +
-                    "|              Quiz will start in 5 seconds...       |\n" +
+                    mates +
                     " \\______________________________ooo_________________/\n" +
                     "                       |  |  |\n" +
                     "                       |_ | _|\n" +

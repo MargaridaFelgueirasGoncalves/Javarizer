@@ -14,7 +14,7 @@ public class QuizRound implements Runnable{
      * fields
      */
     private final String path = "resources/quiz.txt";
-    private String beforeMenu;
+    private final String beforeMenu;
 
     private FileReader fileReader;
     private BufferedReader bReader;
@@ -59,8 +59,11 @@ public class QuizRound implements Runnable{
             }
 
             int counter = 0;
+            int roundCounter = 0;
 
             while (counter < list.size()) {
+
+                roundCounter++;
 
                 String question = list.get(counter++);
                 String answer1 = list.get(counter++);
@@ -82,8 +85,11 @@ public class QuizRound implements Runnable{
                 // if answer is correctAnswer, increase score
                 if (playersAnswer == numberCorrectAnswer) {
                     player.incrementScore();
-                    System.out.println("score " + player.getScore());
                 }
+
+                System.out.println("-------");
+                System.out.println(player.getUsername()  + " " + roundCounter + "/12 " + " | score: " + player.getScore());
+
                 player.getOut().println('\n' + Color.MAGENTA + ">> Correct answer: " + correctAnswer + '\n' + Color.WHITE);
 
                 if (counter == list.size()){
@@ -138,8 +144,41 @@ public class QuizRound implements Runnable{
 
     public void displayResults() {
 
+
+        int maxPoints = 0;
+        LinkedList<String> winners = new LinkedList<>();
+
+        for (Player player : server.getPlayersList()) {
+            if (player.getScore() > maxPoints) {
+                maxPoints = player.getScore();
+            }
+        }
+
+        for (Player player : server.getPlayersList()) {
+            if (player.getScore() == maxPoints) {
+                winners.add(player.getUsername());
+            }
+        }
+
         for (Player player : server.getPlayersList()) {
             server.broadcast(player.getUsername().toUpperCase() + ": " + player.getScore() + " correct answers.");
+        }
+
+        for (Player player : server.getPlayersList()){
+            if (winners.size() > 1) {
+                server.broadcast("");
+                server.broadcast("==============");
+                server.broadcast("Tie between");
+                for (String names : winners) {
+                    server.broadcast(names.substring(0, 1).toUpperCase() + names.substring(1));
+                }
+                server.broadcast("==============");
+            } else {
+                server.broadcast("==============");
+                server.broadcast("Winner");
+                server.broadcast(winners.getFirst());
+                server.broadcast("==============");
+            }
         }
     }
 }

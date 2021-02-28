@@ -64,9 +64,9 @@ Multiple threads
 Only main (main() method) thread
 Two threads
 2-Multiple threads
-QUESTION 12/12 - MC's, what is your favorite group?
-Group 1
-Group 1
-Group 1
-Group 1
-2-Group 1
+QUESTION 12/12 - What is the best bootcamp ever?
+Javapeños
+ASYNCtomatics
+Stringrays
+It is still to come...
+2-ASYNCtomatics
