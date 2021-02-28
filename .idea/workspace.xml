@@ -32,6 +32,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vania\AcademiadeCodigo\group-projects\javarizer\resources" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.academiadecodigo.weekendteamwork.javarizer.Main" />
@@ -52,7 +57,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -77,31 +82,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="implement score counter for players" />
     <option name="LAST_COMMIT_MESSAGE" value="implement score counter for players" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1874" height="313" key="GridCell.Tab.0.bottom" timestamp="1614531465974">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state width="1874" height="313" key="GridCell.Tab.0.bottom/0.1200.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1614531465974" />
-    <state width="1874" height="313" key="GridCell.Tab.0.bottom/0.1200.1920.1080/0.27.1920.1173@0.27.1920.1173" timestamp="1614528746344" />
-    <state width="1874" height="313" key="GridCell.Tab.0.center" timestamp="1614531465974">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state width="1874" height="313" key="GridCell.Tab.0.center/0.1200.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1614531465974" />
-    <state width="1874" height="313" key="GridCell.Tab.0.center/0.1200.1920.1080/0.27.1920.1173@0.27.1920.1173" timestamp="1614528746344" />
-    <state width="1874" height="313" key="GridCell.Tab.0.left" timestamp="1614531465974">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state width="1874" height="313" key="GridCell.Tab.0.left/0.1200.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1614531465974" />
-    <state width="1874" height="313" key="GridCell.Tab.0.left/0.1200.1920.1080/0.27.1920.1173@0.27.1920.1173" timestamp="1614528746344" />
-    <state width="1874" height="313" key="GridCell.Tab.0.right" timestamp="1614531465974">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state width="1874" height="313" key="GridCell.Tab.0.right/0.1200.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1614531465974" />
-    <state width="1874" height="313" key="GridCell.Tab.0.right/0.1200.1920.1080/0.27.1920.1173@0.27.1920.1173" timestamp="1614528746344" />
-    <state x="624" y="282" key="run.anything.popup" timestamp="1614527767673">
-      <screen x="0" y="27" width="1920" height="1173" />
-    </state>
-    <state x="624" y="282" key="run.anything.popup/0.1200.1920.1080/0.27.1920.1173@0.27.1920.1173" timestamp="1614527767673" />
   </component>
 </project>

@@ -1,5 +1,7 @@
 package org.academiadecodigo.weekendteamwork.javarizer;
 
+import org.academiadecodigo.weekendteamwork.javarizer.util.KeyboardListener;
+
 public class Main {
 
     /**
@@ -11,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
 
         new ServerPic();
+        new KeyboardListener();
         Server server = new Server(PORT);
         server.start();
     }

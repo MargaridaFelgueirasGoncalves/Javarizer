@@ -114,10 +114,8 @@ public class Server {
         if ( maxConnections == 1) {
             mates = "|  So I see you have no friends... Just like me...   |\n";
         } else{
-            mates = "|              Quiz will start in 5 seconds...       |\n";
+            mates = "|              Quiz will start in 3 seconds...       |\n";
         }
-
-
 
         try {
             broadcast("\n\n                        .-\"\"\"-.\n" +
@@ -134,7 +132,7 @@ public class Server {
                     "                       |__|__|\n" +
                     "                       /-'Y'-\\\n" +
                     "                      (__/ \\__)\n\n");
-            Thread.sleep(5000);
+            Thread.sleep(3000);
 
         } catch (InterruptedException e) {
             e.printStackTrace();

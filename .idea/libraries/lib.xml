@@ -2,7 +2,7 @@
   <library name="lib">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/simplegraphics.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/prompt-view-0.2.1-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/prompt-view.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
