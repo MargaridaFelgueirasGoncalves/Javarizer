@@ -1,6 +1,5 @@
 package org.academiadecodigo.weekendteamwork.javarizer;
 
-import org.academiadecodigo.bootcamp.Prompt;
 import org.academiadecodigo.bootcamp.scanners.menu.MenuInputScanner;
 
 import java.io.*;
@@ -82,17 +81,7 @@ public class QuizRound implements Runnable{
             }
 
             getResults();
-
-            for (Player player: server.getPlayersList()) {
-                player.getOut().println("win!!!");
-            }
-
-            /**
-             * show results
-             * falta fazer
-             */
-
-
+            displayResults();
 
 //            player.getOut().close();
 
@@ -112,5 +101,15 @@ public class QuizRound implements Runnable{
                 getResults();
             }
         }
+    }
+
+    public void displayResults() {
+
+        for (Player player : server.getPlayersList()) {
+
+            server.broadcast("\n" + player.getUsername() + " :" + player.getScore() + " correct answers.");
+
+        }
+
     }
 }

@@ -91,20 +91,20 @@ public class Server {
 
         try {
 
-            broadcast("\n                        .-\"\"\"-.\n" +
+            broadcast("\n\n+\n                        .-\"\"\"-.\n" +
                     "                       / .===. \\\n" +
                     "                       \\/ 6 6 \\/\n" +
                     "                       ( \\___/ )\n" +
                     "  _________________ooo__\\_____/_____________________\n" +
                     " /                                                  \\\n" +
-                    "|               Game wil start in 5 seconds...          |\n" +
+                    "|               Game wil start in 5 seconds...       |\n" +
                     " \\______________________________ooo_________________/\n" +
                     "                       |  |  |\n" +
                     "                       |_ | _|\n" +
                     "                       |  |  |\n" +
                     "                       |__|__|\n" +
                     "                       /-'Y'-\\\n" +
-                    "                      (__/ \\__)");
+                    "                      (__/ \\__)\n\n");
             Thread.sleep(5000);
 
         } catch (InterruptedException e) {
@@ -113,7 +113,10 @@ public class Server {
 
         startQuiz(quizRound);
 
+
     }
+
+
 
     public void startQuiz(QuizRound round) {
 
